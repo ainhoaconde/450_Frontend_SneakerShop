@@ -1,0 +1,111 @@
+.muiNavbar {
+  z-index: 10;
+  background-color: #4b4b4f !important;
+}
+
+.header_title {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.pages {
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.logo {
+  width: 6%;
+  height: 6%;
+  margin: 0.7%;
+  margin-right: 2vh;
+}
+
+.icons {
+  margin-bottom: 2%;
+}
+
+@media (min-width: 0px) {
+  .logoScreen {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .logoScreen {
+    display: flex;
+  }
+}
+
+@media (min-width: 900px) {
+  .logoMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 495px) {
+  .logoMobile {
+    display: none;
+  }
+}
+
+.shoppingCart {
+  margin-right: 1% !important;
+  width: 5% !important;
+  height: 7.5% !important;
+}
+
+@media (min-width: 400px) {
+  .shoppingCart {
+    margin-right: 12% !important;
+  }
+}
+
+@media (min-width: 494px) {
+  .shoppingCart {
+    margin-right: 12% !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .shoppingCart {
+    margin-right: 6% !important;
+  }
+}
+
+@media (min-width: 1000px) {
+  .shoppingCart {
+    margin-right: 3% !important;
+  }
+}
+
+@media (min-width: 1300px) {
+  .shoppingCart {
+    margin-right: 1% !important;
+  }
+}
+
+@media (max-width: 495px) {
+  .shoppingCart {
+    margin-right: 20% !important;
+  }
+}
+
+@media (min-width: 700px) {
+  .textMobile {
+    font-size: 30px !important;
+  }
+}
+
+@media (min-width: 500px) {
+  .textMobile {
+    font-size: 20px !important;
+  }
+}
+
+@media (max-width: 495px) {
+  .textMobile {
+    display: none !important;
+  }
+}
