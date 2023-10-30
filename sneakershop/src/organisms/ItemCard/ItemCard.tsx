@@ -120,13 +120,13 @@ export default function ItemCard() {
                   >
                     View options
                   </Button>
-                  <IconButton
+                  <IconButton id="addButton"
                     onClick={() => {
                       addItem(sneaker);
                     }}
                   >
-                    <Tooltip title="Add to Cart">
-                      <AddIcon className="addCartButton"></AddIcon>
+                    <Tooltip title="Add to Cart" id="addButton"> 
+                      <AddIcon id="addButton" className="addCartButton"></AddIcon>
                     </Tooltip>
                   </IconButton>
                 </CardActions>

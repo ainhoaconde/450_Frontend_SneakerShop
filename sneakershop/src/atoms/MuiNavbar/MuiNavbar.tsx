@@ -116,13 +116,13 @@ const MuiNavbar = () => {
                     },
                   }}
                 >
-                  {page === "Home" ? <HomeIcon className="icons" /> : ""}
+                  {page === "Home" ? <HomeIcon className="icons" id="homeButton"/> : ""}
                   {page === "Shop" ? (
-                    <ShoppingCartIcon className="icons" />
+                    <ShoppingCartIcon className="icons" id="shopButton"/>
                   ) : (
                     ""
                   )}
-                  {page === "About" ? <ContactsIcon className="icons" /> : ""}
+                  {page === "About" ? <ContactsIcon className="icons" id="aboutUsButton" /> : ""}
                   {page}
                 </Button>
               ))}
