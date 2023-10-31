@@ -38,9 +38,7 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "test": "yarn cypress:run",
-    "sonar": "sonar-scanner -Dsonar.projectKey=IHR_PROJECT_KEY -Dsonar.sources=src -Dsonar.exclusions=**/__tests__/** -Dsonar.tests=src -Dsonar.test.inclusions=**/__tests__/** -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/lcov.info -Dsonar.login=IHR_AUTH_TOKEN",
-    "test:coverage": "yarn cypress:run --spec cypress/integration/**/*.spec.js --env coverage=true",
-    "show-coverage": "npx http-server coverage/lcov-report"
+    "test:coverage": "yarn cypress:run --spec cypress/integration/**/*.spec.js --env coverage=true"
   },
   "eslintConfig": {
     "extends": [
