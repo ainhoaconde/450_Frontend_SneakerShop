@@ -1,5 +1,6 @@
 import { defineConfig } from "cypress";
 
+
 export default defineConfig({
   video: false,
   e2e: {
@@ -18,5 +19,13 @@ export default defineConfig({
       return config;
     },
     baseUrl: "http://localhost:3000",
+    // Reporter configuration for mochawesome
+    reporter: "mochawesome",
+    reporterOptions: {
+      reportDir: "cypress/reports", // The directory where the reports will be saved
+      overwrite: false, // Set to true to overwrite reports on each test run
+      html: true, // Set to true to generate HTML reports
+    },
   },
 });
+

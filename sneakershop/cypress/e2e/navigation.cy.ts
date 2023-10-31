@@ -1,3 +1,5 @@
+import '../support/commands';
+
 describe('Navbar', () => {
     beforeEach(() => {
       cy.visit('http://localhost:3000/');
@@ -24,7 +26,6 @@ describe('Navbar', () => {
       cy.get('.shoppingCart').click();
   
       cy.get('.MuiDrawer-paper').should('be.visible');
-  
     });
   });
   

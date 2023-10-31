@@ -13,6 +13,7 @@ import ProductViewPage from "./pages/ProductViewPage/ProductViewPage";
 import StickyFooter from "./atoms/StickyFooter/StickyFooter";
 import { ShoppingCartContextProvider } from "./atoms/Context/ShoppingCartContext";
 import { SneakerCardContextProvider } from "./atoms/Context/SneakerCardContext";
+import TestReportApp from "./test/TestReportApp";
 
 /**
  * The whole Application
@@ -36,6 +37,7 @@ function App() {
               <Route path="/register" element={<Register />}></Route>
               <Route path="/login" element={<Login />}></Route>
               <Route path="/profile" element={<Profile />}></Route>
+              <Route path="/test-reports" element={<TestReportApp />} />
             </Routes>
           </BrowserRouter>
         </SneakerCardContextProvider>
