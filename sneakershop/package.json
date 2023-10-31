@@ -38,7 +38,8 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "test": "yarn cypress:run",
-    "test:coverage": "yarn cypress:run --spec cypress/integration/**/*.spec.js --env coverage=true"
+    "test:e2e": "cypress run",
+    "start-and-test": "concurrently \"yarn start\" \"yarn cypress:run\""
   },
   "eslintConfig": {
     "extends": [
