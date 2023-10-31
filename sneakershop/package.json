@@ -25,7 +25,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.33.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "selenium-webdriver": "^4.14.0",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0",
@@ -38,7 +38,9 @@
     "cypress:run": "cypress run",
     "cypress:open": "cypress open",
     "test": "yarn cypress:run",
-    "test:coverage": "yarn cypress:run --spec cypress/integration/**/*.spec.js --env coverage=true"
+    "sonar": "sonar-scanner -Dsonar.projectKey=IHR_PROJECT_KEY -Dsonar.sources=src -Dsonar.exclusions=**/__tests__/** -Dsonar.tests=src -Dsonar.test.inclusions=**/__tests__/** -Dsonar.javascript.lcov.reportPaths=coverage/lcov-report/lcov.info -Dsonar.login=IHR_AUTH_TOKEN",
+    "test:coverage": "yarn cypress:run --spec cypress/integration/**/*.spec.js --env coverage=true",
+    "show-coverage": "npx http-server coverage/lcov-report"
   },
   "eslintConfig": {
     "extends": [
@@ -69,6 +71,7 @@
     "jest": "^29.7.0",
     "mocha": "^10.2.0",
     "mochawesome-merge": "^4.3.0",
-    "mochawesome-report-generator": "^6.2.0"
+    "mochawesome-report-generator": "^6.2.0",
+    "sonar-scanner": "^3.1.0"
   }
 }

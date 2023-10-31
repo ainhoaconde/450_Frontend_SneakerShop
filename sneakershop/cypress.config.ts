@@ -24,7 +24,7 @@ export default defineConfig({
     reporterOptions: {
       reportDir: "cypress/reports", // The directory where the reports will be saved
       overwrite: false, // Set to true to overwrite reports on each test run
-      html: true, // Set to true to generate HTML reports
+      html: false, // Set to true to generate HTML reports
     },
   },
 });
