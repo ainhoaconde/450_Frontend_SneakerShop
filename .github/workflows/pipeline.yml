@@ -17,7 +17,7 @@ jobs:
         run: yarn install
 
       - name: Run Cypress tests
-        run: yarn cypress run
+        run: yarn cypress:run
 
       - name: Upload test results
         uses: actions/upload-artifact@v2
