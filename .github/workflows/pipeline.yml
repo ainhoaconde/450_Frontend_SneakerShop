@@ -15,18 +15,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
+        working-directory: sneakershop
 
       - name: Run Cypress tests
         run: yarn cypress:run
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v2
-        with:
-          name: cypress-results
-          path: cypress/videos
-
-      - name: Upload screenshots
-        uses: actions/upload-artifact@v2
-        with:
-          name: cypress-screenshots
-          path: cypress/screenshots
+        working-directory: sneakershop
