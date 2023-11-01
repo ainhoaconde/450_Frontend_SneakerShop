@@ -1,0 +1,123 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2023-11-01T21:50:00.757Z",
+    "end": "2023-11-01T21:50:10.661Z",
+    "duration": 9904,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "78895ae5-4d97-4625-ab49-eff7035af9a4",
+      "title": "",
+      "fullFile": "cypress\\e2e\\shoppingProcess.cy.ts",
+      "file": "cypress\\e2e\\shoppingProcess.cy.ts",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "669f2649-cfda-4154-8ee5-c41ae85696b6",
+          "title": "Add to Shopping Cart process",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should add an item to the shopping cart and cancel",
+              "fullTitle": "Add to Shopping Cart process should add an item to the shopping cart and cancel",
+              "timedOut": null,
+              "duration": 5189,
+              "state": "passed",
+              "speed": "medium",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the page where the ItemCard component is rendered\ncy.visit(\"/\");\n// Intercept the route to the product details page (adjust the route pattern as needed)\ncy.intercept(\"/shop/*\").as(\"productDetails\");\n// Click on the \"View options\" button of the first item\ncy.get(\".cardButton:contains('View options')\").first().click();\ncy.wait(1000); // Adjust the wait time as needed\n// Assert that you are now on the product details page (verify the URL)\ncy.url().should(\"match\", /\\/shop\\/\\w+/); // Adjust the URL pattern as needed\n// Click the \"Add to Cart\" button\ncy.get(\"button:contains('Add to cart')\").click();\n// Confirm that the item was added to the shopping cart by clicking on the shopping cart icon\ncy.get(\".shoppingCart button\").click();\n// Click the \"Checkout\" button\ncy.get(\"button:contains('Checkout')\").click();\ncy.wait(1000); // Adjust the wait time as needed\n// Click the \"Complete Shopping\" button to open the dialog\ncy.get(\"button:contains('Complete Shopping')\").click();\ncy.wait(1000); // Adjust the wait time as needed\n// Verify that the \"Send invoice via email\" dialog is visible\ncy.get(\".MuiDialogTitle-root:contains('Send invoice via email')\").should(\"be.visible\");\n// Find and click the \"Cancel\" button in the dialog\ncy.get(\"button:contains('Cancel')\").click();",
+              "err": {},
+              "uuid": "196b51ef-3d44-4dfa-8e41-498eda0e20d5",
+              "parentUUID": "669f2649-cfda-4154-8ee5-c41ae85696b6",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should add an item to the shopping cart and download",
+              "fullTitle": "Add to Shopping Cart process should add an item to the shopping cart and download",
+              "timedOut": null,
+              "duration": 4393,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// Visit the page where the ItemCard component is rendered\ncy.visit(\"/\");\n// Intercept the route to the product details page (adjust the route pattern as needed)\ncy.intercept(\"/shop/*\").as(\"productDetails\");\n// Click on the \"View options\" button of the first item\ncy.get(\".cardButton:contains('View options')\").first().click();\ncy.wait(1000); // Adjust the wait time as needed\n// Assert that you are now on the product details page (verify the URL)\ncy.url().should(\"match\", /\\/shop\\/\\w+/); // Adjust the URL pattern as needed\n// Click the \"Add to Cart\" button\ncy.get(\"button:contains('Add to cart')\").click();\n// Confirm that the item was added to the shopping cart by clicking on the shopping cart icon\ncy.get(\".shoppingCart button\").click();\n// Click the \"Checkout\" button\ncy.get(\"button:contains('Checkout')\").click();\ncy.wait(1000); // Adjust the wait time as needed\n// Click the \"Complete Shopping\" button to open the dialog\ncy.get(\"button:contains('Complete Shopping')\").click();\ncy.wait(1000); // Adjust the wait time as needed\n// Verify that the \"Send invoice via email\" dialog is visible\ncy.get(\".MuiDialogTitle-root:contains('Send invoice via email')\").should(\"be.visible\");\n// Find and click the \"Download\" button in the dialog\ncy.get(\"#downloadButton\").click();",
+              "err": {},
+              "uuid": "3ab2b463-e415-4261-a604-91e13c66f1e9",
+              "parentUUID": "669f2649-cfda-4154-8ee5-c41ae85696b6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "196b51ef-3d44-4dfa-8e41-498eda0e20d5",
+            "3ab2b463-e415-4261-a604-91e13c66f1e9"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9582,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
