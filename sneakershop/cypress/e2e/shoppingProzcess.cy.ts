@@ -1,4 +1,4 @@
-describe("Add to Shopping Cart", () => {
+describe("Add to Shopping Cart process", () => {
   it("should add an item to the shopping cart", () => {
     // Visit the page where the ItemCard component is rendered
     cy.visit("/");
