@@ -78,7 +78,7 @@ export default function FormDialog() {
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={download} href="http://localhost:3000/shop">
+          <Button onClick={download} href="http://localhost:3000/shop" id='downloadButton'>
             Download
           </Button>
         </DialogActions>
