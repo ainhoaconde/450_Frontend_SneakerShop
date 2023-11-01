@@ -8,10 +8,6 @@ function Copyright() {
   return (
     <div className="copyrightFooter">
       <Typography variant="body2" color="whitesmoke">
-        {"Copyright © "}
-        <Link color="inherit" href="https://houseofkickz.netlify.app/">
-          House of Kickz
-        </Link>{" "}
         {new Date().getFullYear()}{" "}
       </Typography>
     </div>
