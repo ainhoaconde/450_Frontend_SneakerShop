@@ -1,26 +1,43 @@
-name: Cypress tests
+name: Cypress Tests with Dependency and Artifact Caching
+
 on: push
+
 jobs:
-  cypress-run:
-    name: Cypress run
+  install:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: Cypress install
+        uses: cypress-io/github-action@v6
         with:
-          node-version: '16'
+          # Disable running of tests within install job
+          runTests: false
+          build: yarn install
 
-      - name: Install dependencies
-        run: yarn install
-        working-directory: sneakershop
+      - name: Save build folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: build
+          if-no-files-found: error
+          path: build
 
-      - name: Start your application
-        run: yarn start
-        working-directory: sneakershop
+  cypress-run:
+    runs-on: ubuntu-22.04
+    needs: install
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Run Cypress tests
-        run: yarn cypress:run
-        working-directory: sneakershop
+      - name: Download the build folder
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          start: yarn start
+          browser: chrome
