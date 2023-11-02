@@ -31,5 +31,9 @@ describe("search with the search field a specific shoe", () => {
 
     // Wait for the search results to appear (adjust the selector as needed)
     cy.get(".searchResult").should("not.exist");
+
+    cy.screenshot("screenshots/searchField-screenshot");
+
+    cy.screenshot("searchField-screenshot.png", { capture: "viewport" });
   });
 });
