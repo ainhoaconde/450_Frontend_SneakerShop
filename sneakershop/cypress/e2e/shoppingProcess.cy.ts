@@ -71,5 +71,10 @@ describe("Add to Shopping Cart process", () => {
 
     // Find and click the "Download" button in the dialog
     cy.get("#downloadButton").click();
+
+    cy.screenshot("screenshots/shoppFingProcess-screenshot");
+
+    cy.screenshot("shoppingProcess-screenshot.png", { capture: "viewport" });
+
   });
 });

@@ -1,36 +1,38 @@
-import '../support/commands';
+import "../support/commands";
 
-describe('Navbar', () => {
-    beforeEach(() => {
-        // Visit the homepage before each test
-        cy.visit('http://localhost:3000/');
+describe("Navbar", () => {
+  beforeEach(() => {
+    // Visit the homepage before each test
+    cy.visit("http://localhost:3000/");
+  });
+
+  it("should display the logo and navigation links", () => {
+    // Check if the logo is visible
+    cy.get(".logo").should("be.visible");
+
+    // Check if each navigation link is visible
+    cy.get(".pages").each((link) => {
+      cy.wrap(link).should("be.visible");
     });
+  });
 
-    it('should display the logo and navigation links', () => {
-        // Check if the logo is visible
-        cy.get('.logo').should('be.visible');
+  it("should open the navigation menu on small screens", () => {
+    // Change the viewport to simulate a small screen (e.g., iPhone 6)
+    cy.viewport("iphone-6");
 
-        // Check if each navigation link is visible
-        cy.get('.pages').each((link) => {
-            cy.wrap(link).should('be.visible');
-        });
-    });
+    // Click the navigation menu button (hamburger icon)
+    cy.get(".MuiIconButton-root").click();
 
-    it('should open the navigation menu on small screens', () => {
-        // Change the viewport to simulate a small screen (e.g., iPhone 6)
-        cy.viewport('iphone-6');
+    // Check if the navigation menu is visible
+    cy.get(".MuiMenu-paper").should("be.visible");
+  });
 
-        // Click the navigation menu button (hamburger icon)
-        cy.get('.MuiIconButton-root').click();
+  it("should open the shopping cart drawer when clicked", () => {
+    // Click on the shopping cart icon
+    cy.get(".shoppingCart").click();
 
-        // Check if the navigation menu is visible
-        cy.get('.MuiMenu-paper').should('be.visible');
-    });
+    cy.screenshot("screenshots/navigation-screenshot");
 
-    it('should open the shopping cart drawer when clicked', () => {
-        // Click on the shopping cart icon
-        cy.get('.shoppingCart').click();
-
-      
-    });
+    cy.screenshot("navigation-screenshot.png", { capture: "viewport" });
+  });
 });
